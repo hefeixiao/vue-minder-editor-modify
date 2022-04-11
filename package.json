@@ -1,8 +1,8 @@
 {
-  "name": "vue-testcase-minder-editor",
-  "version": "0.3.12",
+  "name": "vue-minder-editor-modify",
+  "version": "0.1.0",
   "private": false,
-  "author": "chenhengjie",
+  "author": "xiaohefei",
   "main": "lib/VueTestcaseMinderEditor.umd.min.js",
   "files": [
     "lib/VueTestcaseMinderEditor.umd.min.js",

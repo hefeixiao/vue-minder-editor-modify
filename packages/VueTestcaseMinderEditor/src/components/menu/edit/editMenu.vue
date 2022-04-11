@@ -19,6 +19,7 @@
   <resource-edit v-if="allowEditLabel"></resource-edit>
   <!--测试结果登记-->
   <result-box v-if="allowEditResult"></result-box>
+  <el-button id="saveMinder" type="primary" @click="saveMinder()"> 保存 <i class="el-icon-upload el-icon--right"></i> </el-button>
 
 </div>
 </template>
@@ -77,6 +78,11 @@ export default {
       return this.config.allowEditNode
     }
 
+  },
+  methods: {
+    saveMinder: function () {
+      this.$emit("saveMinder")
+    }
   }
 }
 </script>

@@ -6,7 +6,8 @@
       :allowEditPriority="editMode"
       :allowEditLabel="editMode"
       :allowEditResult="editMode"
-      :allowEditNode="editMode">
+      :allowEditNode="editMode"
+      @saveMinder="saveMinder">
     </VueTestcaseMinderEditor>
 
     <button :style="{left: '0px'}" v-on:click="logCurrentData">打印当前用例 json 至 console 日志</button>
@@ -49,6 +50,9 @@ export default {
     }
   },
   methods: {
+    saveMinder: function () {
+      console.log('this is saveMinder event')
+    },
     logCurrentData: function(event) {
       const caseJson = this.$refs.minderEditor.getJsonData();
       console.log('编辑器中的最新用例内容：', caseJson)

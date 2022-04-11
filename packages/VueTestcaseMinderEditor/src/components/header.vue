@@ -12,10 +12,10 @@
         <el-button class="full-screen-button" icon="el-icon-full-screen" @click="toggleFullScreen">{{fullScreenText}}</el-button>
       </div>
     </div>
-        
+
     <div id="mind_tab-content">
       <div class="mind-tab-panel" v-show="switchShow.showEditMenu">
-        <edit-menu></edit-menu>
+        <edit-menu @saveMinder="saveMinder"></edit-menu>
       </div>
       <div class="mind-tab-panel" v-show="switchShow.showViewMenu">
         <view-menu></view-menu>
@@ -31,7 +31,7 @@
     mapMutations,
     mapGetters
   } from 'vuex'
-  
+
   export default {
     name: 'headerVue',
     data() {
@@ -90,6 +90,9 @@
         this.setConfig({'isFullScreen': !this.config.isFullScreen})
 
         this.fullScreenText = this.fullScreenText.indexOf("退出") === -1 ? "退出全屏": "全屏"
+      },
+      saveMinder: function () {
+        this.$emit("saveMinder")
       }
     }
   }

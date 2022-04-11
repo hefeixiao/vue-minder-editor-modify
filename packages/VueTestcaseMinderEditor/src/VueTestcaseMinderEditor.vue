@@ -4,6 +4,7 @@
       :allowEditLabel="allowEditLabel"
       :allowEditResult="allowEditResult"
       :allowEditNode="allowEditNode"
+          @saveMinder="saveMinder"
   ></editor>
 </template>
 
@@ -96,10 +97,13 @@ export default {
     ]),
     getJsonData() {
       return this.minder.exportJson()
+    },
+    saveMinder: function () {
+      this.$emit("saveMinder")
     }
   },
   mounted() {
-    // TODO: 直接从 window 取 minder 不大好，应该调用 vuex 
+    // TODO: 直接从 window 取 minder 不大好，应该调用 vuex
     this.minder = window.minder
     this.minder.importJson(this.initJson)
   },
