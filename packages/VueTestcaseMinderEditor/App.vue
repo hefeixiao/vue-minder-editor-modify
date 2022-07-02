@@ -16,9 +16,14 @@
 </template>
 
 <script>
+import VueTestcaseMinderEditor from './src/VueTestcaseMinderEditor.vue'
+
 
 export default {
   name: 'app',
+  components: {
+    VueTestcaseMinderEditor
+  },
   data () {
     return {
       initJson: {
