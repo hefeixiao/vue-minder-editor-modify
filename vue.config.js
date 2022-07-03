@@ -2,8 +2,8 @@ module.exports = {
   publicPath: './',
   pages: {
     index: {
-      entry: 'examples/main.js', // 走示例项目，需要 npm run lib 后才能使用
-      // entry: 'packages/VueTestcaseMinderEditor/main.js', // 走主工程项目，可直接 npm run serve 使用。方便调试时查看源码堆栈
+      // entry: 'examples/main.js', // 走示例项目，需要 npm run lib 后才能使用
+      entry: 'packages/VueTestcaseMinderEditor/main.js', // 走主工程项目，可直接 npm run serve 使用。方便调试时查看源码堆栈
       template: 'public/index.html',
       filename: 'index.html'
     }

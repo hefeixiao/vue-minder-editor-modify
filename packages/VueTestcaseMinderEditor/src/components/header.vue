@@ -2,10 +2,10 @@
   <header>
     <div id="mind_tab">
       <div :class="{selected:switchShow.showEditMenu}">
-        <a href="javascritp:;" class="btn-showEditMenu" @click="showMenu">思维导图</a>
+        <a href="javascript:void(0)" class="btn-showEditMenu" @click="showMenu">思维导图</a>
       </div>
       <div :class="{selected:switchShow.showViewMenu}">
-        <a href="javascritp:;" class="btn-showViewMenu" @click="showMenu">外观样式</a>
+        <a href="javascript:void(0)" class="btn-showViewMenu" @click="showMenu">外观样式</a>
       </div>
       <div class="rightCol">
         <span class="selected-node-count-text">{{selectedNodeCountText}}</span>

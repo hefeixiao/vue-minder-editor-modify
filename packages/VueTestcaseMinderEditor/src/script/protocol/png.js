@@ -1,5 +1,5 @@
 var DOMURL = window.URL || window.webkitURL || window;
-
+import $ from 'jquery';
 function downloadImage(fileURI, fileName) {
   try {
     const link = document.createElement('a');

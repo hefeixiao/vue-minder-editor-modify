@@ -32,7 +32,7 @@ define(function (require, exports, module) {
   // 为兼容原有滴滴用例，用例结果复用了 progress 这个 key 所以不能出原版 progress 的 hotbox 按钮
   // assemble(require('./runtime/progress'));
   // 禁用导出功能
-  // assemble(require('./runtime/exports'));
+  assemble(require('./runtime/exports'));
   assemble(require('./runtime/result'));
 
   return module.exports = KMEditor;

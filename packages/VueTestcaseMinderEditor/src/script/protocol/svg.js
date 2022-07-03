@@ -1,3 +1,4 @@
+import $ from 'jquery';
 function exportSVG(minder) {
 
   var paper = minder.getPaper();

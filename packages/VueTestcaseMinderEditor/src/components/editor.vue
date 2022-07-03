@@ -3,6 +3,7 @@
   <div :class="computeFullScreenClass">
     <header-menu @saveMinder="saveMinder"></header-menu>
     <main-editor></main-editor>
+    <foot></foot>
     <navigator></navigator>
 
     <!-- note markdown 挂件 -->
@@ -33,6 +34,7 @@
   import searchBox from "./menu/edit/search/searchBox";
   import searchLabelBox from "./menu/edit/search/searchLabelBox";
   import {expandParent} from '../utils/convert/jsonconvert';
+  import foot from "./footer";
 
   import {
     mapMutations,
@@ -43,6 +45,7 @@
   export default {
     name: 'editor',
     components: {
+      foot,
       headerMenu,
       mainEditor,
       navigator,

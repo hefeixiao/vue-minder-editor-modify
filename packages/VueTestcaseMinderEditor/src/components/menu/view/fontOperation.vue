@@ -179,7 +179,7 @@ export default {
     },
     methods: {
         execCommandFontFamily(value) {
-            if (value == "字体") {
+            if (value === "字体") {
                 return;
             }
             this.minder.execCommand("fontfamily", value);

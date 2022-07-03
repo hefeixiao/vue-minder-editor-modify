@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import editor from './components/editor.vue'
 import Vue from 'vue'
 
@@ -16,7 +17,6 @@ import Vue from 'vue'
 import caseEditorStore from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
-import $ from 'jquery'
 
 require('codemirror')
 require('codemirror/mode/xml/xml')
