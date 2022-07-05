@@ -11,6 +11,7 @@
   "browser": true,
   "boss": true,
   "loopfunc": true,
+  "asi": true,
   "predef" : [
     "module",
     "require",
