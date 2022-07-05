@@ -1,8 +1,8 @@
 <template lang="html">
 <div class="menu-container">
-<!--  撤销回退、重做-->
+  <!--  撤销回退、重做-->
   <back-and-right></back-and-right>
-
+  <!--  扩展节点-->
   <expand></expand>
   <selection></selection>
   <insert-box v-if="allowEditNode"></insert-box>
@@ -10,7 +10,7 @@
   <edit-del v-if="allowEditNode"></edit-del>
   <!--    超链接-->
   <hyberlink v-if="allowEditNode"></hyberlink>
-<!--  查询、过滤-->
+  <!--  查询、过滤-->
   <search></search>
   <node-box v-if="allowEditNode"></node-box>
   <sequence-box v-if="allowEditPriority"></sequence-box>
@@ -32,12 +32,13 @@ import sequenceBox from './sequenceBox'
 import progressBox from './progressBox'
 import expand from './expand'
 import selection from './selection'
-import NodeBox from "./noteBox";
-import resourceEdit from "./resourceEdit";
-import Search from "./search/search";
-import hyberlink from "./hyberlink";
-import backAndRight from "./backAndRight";
-import resultBox from './resultBox';
+import NodeBox from './noteBox'
+import resourceEdit from './resourceEdit'
+import Search from './search/search'
+import hyberlink from './hyberlink'
+import backAndRight from './backAndRight'
+import resultBox from './resultBox'
+import Attachment from './attachment'
 
 import {
   mapGetters
@@ -46,6 +47,7 @@ import {
 export default {
   name: 'editMenu',
   components: {
+    Attachment,
     Search,
     NodeBox,
     insertBox,
@@ -65,23 +67,23 @@ export default {
       count: 'count',
       config: 'config'
     }),
-    allowEditPriority() {
+    allowEditPriority () {
       return this.config.allowEditPriority
     },
-    allowEditLabel() {
+    allowEditLabel () {
       return this.config.allowEditLabel
     },
-    allowEditResult() {
+    allowEditResult () {
       return this.config.allowEditResult
     },
-    allowEditNode() {
+    allowEditNode () {
       return this.config.allowEditNode
     }
 
   },
   methods: {
     saveMinder: function () {
-      this.$emit("saveMinder")
+      this.$emit('saveMinder')
     }
   }
 }

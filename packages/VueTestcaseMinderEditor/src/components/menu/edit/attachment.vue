@@ -1,18 +1,5 @@
-<template lang="">
+<template lang="html">
 <div class="attachment-group">
-  <div class="link ">
-    <el-button class="tab-icons insert" @click="showOverlay"></el-button>
-    <el-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        链接
-        <i class="el-icon-caret-bottom el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown" class="link-dropdown-list">
-        <el-dropdown-item>插入链接</el-dropdown-item>
-        <el-dropdown-item>移除已有链接</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-  </div>
   <div class="img">
     <el-button class="tab-icons insert" @click="showOverlay"></el-button>
     <el-dropdown trigger="click">

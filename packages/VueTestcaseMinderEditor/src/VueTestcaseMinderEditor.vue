@@ -18,6 +18,11 @@ import caseEditorStore from './store'
 import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
 
+import {
+  mapMutations,
+  mapGetters
+} from 'vuex'
+
 require('codemirror')
 require('codemirror/mode/xml/xml')
 require('codemirror/mode/javascript/javascript')
@@ -39,16 +44,11 @@ require('./script/expose-editor.js')
 
 Vue.use(ElementUI)
 
-import {
-  mapMutations,
-  mapGetters
-} from 'vuex'
-
 export default {
   components: { editor },
   name: 'VueTestcaseMinderEditor',
   caseEditorStore,
-  data() {
+  data () {
     return {
       minder: {}
     }
@@ -56,16 +56,18 @@ export default {
   props: {
     initJson: {
       type: Object,
-      default: {
-        'root': {
-            "data": {
-                "id": "c9hol4de1iw0",
-                "created": 1614161753133,
-                "text": "中心主题"
+      default: () => {
+        return {
+          root: {
+            data: {
+              id: 'c9hol4de1iw0',
+              created: 1614161753133,
+              text: '中心主题'
             },
-            "template": "default",
-            "theme": "fresh-blue",
-            "version": "1.4.43"
+            template: 'default',
+            theme: 'fresh-blue',
+            version: '1.4.43'
+          }
         }
       }
     },
@@ -89,20 +91,20 @@ export default {
   computed: {
     ...mapGetters('caseEditorStore', [
       'config'
-    ]),
+    ])
   },
   methods: {
     ...mapMutations('caseEditorStore', [
       'setConfig'
     ]),
-    getJsonData() {
+    getJsonData () {
       return this.minder.exportJson()
     },
     saveMinder: function () {
-      this.$emit("saveMinder")
+      this.$emit('saveMinder')
     }
   },
-  mounted() {
+  mounted () {
     // TODO: 直接从 window 取 minder 不大好，应该调用 vuex
     this.minder = window.minder
     this.minder.importJson(this.initJson)
@@ -112,28 +114,28 @@ export default {
     // 因此需要监听这个属性值的变化，一旦有变化重新加载。
     initJson: {
       deep: true,
-      handler(val) {
+      handler (val) {
         this.minder.importJson(val)
       }
     },
     allowEditPriority: {
-      handler(value) {
-        this.setConfig({"allowEditPriority": value})
+      handler (value) {
+        this.setConfig({ allowEditPriority: value })
       }
     },
     allowEditLabel: {
-      handler(value) {
-        this.setConfig({"allowEditLabel": value})
+      handler (value) {
+        this.setConfig({ allowEditLabel: value })
       }
     },
     allowEditResult: {
-      handler(value) {
-        this.setConfig({"allowEditResult": value})
+      handler (value) {
+        this.setConfig({ allowEditResult: value })
       }
     },
     allowEditNode: {
-      handler(value) {
-        this.setConfig({"allowEditNode": value})
+      handler (value) {
+        this.setConfig({ allowEditNode: value })
       }
     }
   }
