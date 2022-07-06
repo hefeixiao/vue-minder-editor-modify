@@ -1,3 +1,11 @@
+## [0.1.2](https://github.com/hefeixiao/vue-minder-editor-modify/compare/v0.3.12...v0.1.2) (2022-07-06)
+
+### Reverts
+
+* 弃用provide/inject，采用逐级emit 保存 ([b3ace18](https://github.com/hefeixiao/vue-minder-editor-modify/commit/b3ace18f4b5cfac3005f30cc7c51cede85c81f74))
+
+
+
 ## [0.1.1](https://github.com/hefeixiao/vue-minder-editor-modify/compare/v0.3.12...v0.1.1) (2022-07-06)
 
 ### Bug Fixes
