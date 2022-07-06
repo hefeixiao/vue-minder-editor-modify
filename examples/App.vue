@@ -43,6 +43,11 @@ export default {
       editMode: false
     }
   },
+  provide: {
+    save: function () {
+      console.log('this is example sample save')
+    }
+  },
   computed: {
     buttonText: function() {
       return this.editMode === false ? '进入编辑模式，允许修改脑图内容及登记结果' : '退出编辑模式'
