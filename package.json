@@ -2,7 +2,7 @@
   "name": "testcase-minder-vue",
   "version": "0.1.0",
   "private": false,
-  "author": "chenhengjie",
+  "author": "xiaohefei",
   "main": "lib/VueTestcaseMinderEditor.umd.min.js",
   "files": [
     "lib/VueTestcaseMinderEditor.umd.min.js",

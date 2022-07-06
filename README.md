@@ -1,6 +1,6 @@
 # VUE-TESTCASE-MINDER-EDITOR
 
-基于百度脑图，并使用Vue二次开发的用例脑图编辑器组件。
+基于vue开源脑图组件，进行适当改造：[chenghengjie123/vue-testcase-minder-editor](https://github.com/chenhengjie123/vue-testcase-minder-editor) 
 
 底层基础（因为需要协同修改，已经整体挪到项目中）：[百度脑图](https://github.com/fex-team/kityminder-core) 
 
@@ -10,11 +10,11 @@
 
 采用Vue 全家桶 + Element UI + webpack 开发
 
-在此特别感谢 [fudax](https://github.com/fudax)、[MeYoung](https://github.com/MeYoung) 两位前辈的开源贡献，我只是站在大家的肩膀上补充了一些边角功能而已
+在此特别感谢 [chenghengjie123](https://github.com/chenhengjie123) 及其他前辈的开源贡献及帮助
 
 ## 效果
 
-![脑图](https://github.com/chenhengjie123/vue-testcase-minder-editor/blob/master/docs/preview.png)
+![脑图](https://github.com/hefeixiao/vue-minder-editor-modify/tree/master/docs/preview.png)
 
 也可以本地跑起来体验，克隆完代码后，在根目录下：
 
@@ -40,7 +40,7 @@ npm run lib && npm run serve
 安装本组件
 
 ``` bash
-npm --registry=https://registry.npm.taobao.org install vue-testcase-minder-editor
+npm --registry=https://registry.npm.taobao.org install testcase-minder-vue
 ```
 
 在 main.js 中
@@ -211,6 +211,15 @@ cd kityminder-core && npm run build && cd ..
 2、editor的右键菜单，增加 result 相关操作。可参考 `packages/VueTestcaseMinderEditor/src/script/runtime/result.js`
 
 3、kityminder-core 的命令解析器及渲染器，解析前两处发出的命令并对应修改节点内容。可参考 `kityminder-core/src/module/result.js`
+
+4、通过provide/inject方式，脑图视图区域增加保存按钮，方法名必须是save：
+``` 
+   provide: {
+       save: function () {
+       console.log('this is provideSave event')
+      }
+   }
+```
 
 # License
 
