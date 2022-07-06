@@ -80,11 +80,6 @@ export default {
       return this.config.allowEditNode
     }
 
-  },
-  methods: {
-    saveMinder: function () {
-      this.$emit('saveMinder')
-    }
   }
 }
 </script>

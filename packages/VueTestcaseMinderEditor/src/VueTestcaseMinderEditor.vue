@@ -1,9 +1,9 @@
 <template>
   <editor class="vue-testcase-minder-editor-container"
-      :allowEditPriority="allowEditPriority"
-      :allowEditLabel="allowEditLabel"
-      :allowEditResult="allowEditResult"
-      :allowEditNode="allowEditNode"
+          :allowEditPriority="allowEditPriority"
+          :allowEditLabel="allowEditLabel"
+          :allowEditResult="allowEditResult"
+          :allowEditNode="allowEditNode"
           @saveMinder="saveMinder"
   ></editor>
 </template>

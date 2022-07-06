@@ -18,7 +18,6 @@
 <script>
 import VueTestcaseMinderEditor from './src/VueTestcaseMinderEditor.vue'
 
-
 export default {
   name: 'app',
   components: {
@@ -49,19 +48,17 @@ export default {
       editMode: false
     }
   },
-  provide: {
-    save: function () {
-      console.log('this is provideSave event')
-    }
-  },
   computed: {
-    buttonText: function() {
+    buttonText: function () {
       return this.editMode === false ? '进入编辑模式，允许修改脑图内容及登记结果' : '退出编辑模式'
     }
   },
   methods: {
+    update: function () {
+      console.log('update method')
+    },
     saveMinder: function () {
-      console.log('this is saveMinder event')
+      this.update()
     },
     logCurrentData: function(event) {
       const caseJson = this.$refs.minderEditor.getJsonData();

@@ -85,6 +85,7 @@ store.registerModule('caseEditorStore', {
       :allowEditLabel="true"     // 是否允许增删改标签，实时更新状态
       :allowEditResult="true"    // 是否允许增删改测试结果，实时更新状态
       :allowEditNode="true">     // 是否允许增删改节点内容，实时更新状态
+      @saveMinder="saveMinder"   // 增加保存脑图方法，可调用后端接口保存
     </VueTestcaseMinderEditor>
 </template>
 ...
@@ -212,14 +213,8 @@ cd kityminder-core && npm run build && cd ..
 
 3、kityminder-core 的命令解析器及渲染器，解析前两处发出的命令并对应修改节点内容。可参考 `kityminder-core/src/module/result.js`
 
-4、通过provide/inject方式，脑图视图区域增加保存按钮，方法名必须是save：
-``` 
-   provide: {
-       save: function () {
-       console.log('this is provideSave event')
-      }
-   }
-```
+4、脑图编辑器增加保存按钮，方法名是saveMinder
+
 
 # License
 

@@ -15,7 +15,7 @@
 
     <div id="mind_tab-content">
       <div class="mind-tab-panel" v-show="switchShow.showEditMenu">
-        <edit-menu @saveMinder="saveMinder"></edit-menu>
+        <edit-menu></edit-menu>
       </div>
       <div class="mind-tab-panel" v-show="switchShow.showViewMenu">
         <view-menu></view-menu>
@@ -90,9 +90,6 @@
         this.setConfig({'isFullScreen': !this.config.isFullScreen})
 
         this.fullScreenText = this.fullScreenText.indexOf("退出") === -1 ? "退出全屏": "全屏"
-      },
-      saveMinder: function () {
-        this.$emit("saveMinder")
       }
     }
   }

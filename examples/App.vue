@@ -6,7 +6,8 @@
       :allowEditPriority="editMode"
       :allowEditLabel="editMode"
       :allowEditResult="editMode"
-      :allowEditNode="editMode">
+      :allowEditNode="editMode"
+      @saveMinder="saveMinder">
     </VueTestcaseMinderEditor>
 
     <button :style="{left: '0px'}" v-on:click="logCurrentData">打印当前用例 json 至 console 日志</button>
@@ -43,17 +44,18 @@ export default {
       editMode: false
     }
   },
-  provide: {
-    save: function () {
-      console.log('this is example sample save')
-    }
-  },
   computed: {
     buttonText: function() {
       return this.editMode === false ? '进入编辑模式，允许修改脑图内容及登记结果' : '退出编辑模式'
     }
   },
   methods: {
+    update: function () {
+      console.log('for example: update method')
+    },
+    saveMinder: function () {
+      this.update()
+    },
     logCurrentData: function(event) {
       const caseJson = this.$refs.minderEditor.getJsonData();
       console.log('编辑器中的最新用例内容：', caseJson)

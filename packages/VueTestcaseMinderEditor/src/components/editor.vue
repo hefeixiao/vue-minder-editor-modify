@@ -1,9 +1,9 @@
 <template>
   <!--<div class="main-container">-->
   <div :class="computeFullScreenClass">
-    <header-menu @saveMinder="saveMinder"></header-menu>
+    <header-menu></header-menu>
     <main-editor></main-editor>
-    <foot></foot>
+    <foot @saveMinder="saveMinder"></foot>
     <navigator></navigator>
 
     <!-- note markdown 挂件 -->

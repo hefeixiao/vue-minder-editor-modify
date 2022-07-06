@@ -1,17 +1,16 @@
 <template lang="html">
   <div class="foot">
-    <el-button class="foot-button" id="save-footer" type="small" @click="saveProvideMinder">
-      <i class="el-icon-upload2 el-icon-right"></i> 保存
+    <el-button class="foot-button" id="save-minder" type="primary" @click="saveMinder"> 保存
+      <i class="el-icon-upload2 el-icon-right"></i>
     </el-button>
   </div>
 </template>
 <script>
 export default {
   name: 'foot',
-  inject: ['save'],
   methods: {
-    saveProvideMinder: function () {
-      this.save()
+    saveMinder: function () {
+      this.$emit('saveMinder')
     }
   }
 }
