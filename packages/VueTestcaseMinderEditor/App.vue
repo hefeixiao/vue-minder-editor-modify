@@ -7,6 +7,7 @@
       :allowEditLabel="editMode"
       :allowEditResult="editMode"
       :allowEditNode="editMode"
+      :showSaveBtn="showSaveBtn"
       @saveMinder="saveMinder">
     </VueTestcaseMinderEditor>
 
@@ -45,7 +46,8 @@ export default {
           ]
         }
       },
-      editMode: false
+      editMode: false,
+      showSaveBtn: false
     }
   },
   computed: {
@@ -81,6 +83,7 @@ export default {
     },
     toggleEditMode: function(event) {
       this.editMode = !this.editMode
+      this.showSaveBtn = !this.showSaveBtn
     },
     checkJsonHasDuplicateId: function(jsonData, nodeDatas) {
       // console.log("checkJsonHasDuplicateId", jsonData, nodeDatas)

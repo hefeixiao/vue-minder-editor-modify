@@ -4,6 +4,7 @@
           :allowEditLabel="allowEditLabel"
           :allowEditResult="allowEditResult"
           :allowEditNode="allowEditNode"
+          :showSaveBtn="showSaveBtn"
           @saveMinder="saveMinder"
   ></editor>
 </template>
@@ -84,6 +85,10 @@ export default {
       default: true
     },
     allowEditNode: {
+      type: Boolean,
+      default: true
+    },
+    showSaveBtn: {
       type: Boolean,
       default: true
     }

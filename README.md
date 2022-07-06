@@ -85,7 +85,8 @@ store.registerModule('caseEditorStore', {
       :allowEditLabel="true"     // 是否允许增删改标签，实时更新状态
       :allowEditResult="true"    // 是否允许增删改测试结果，实时更新状态
       :allowEditNode="true">     // 是否允许增删改节点内容，实时更新状态
-      @saveMinder="saveMinder"   // 增加保存脑图方法，可调用后端接口保存
+      :showSaveBtn="showSaveBtn" // 是否显示保存按钮
+      @saveMinder="saveMinder"   // 若显示保存按钮，可增加保存脑图方法
     </VueTestcaseMinderEditor>
 </template>
 ...

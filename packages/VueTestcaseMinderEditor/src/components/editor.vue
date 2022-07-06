@@ -3,7 +3,7 @@
   <div :class="computeFullScreenClass">
     <header-menu></header-menu>
     <main-editor></main-editor>
-    <foot @saveMinder="saveMinder"></foot>
+    <foot :showSaveBtn="showSaveBtn" @saveMinder="saveMinder"></foot>
     <navigator></navigator>
 
     <!-- note markdown 挂件 -->
@@ -89,6 +89,10 @@
         default: true
       },
       allowEditNode: {
+        type: Boolean,
+        default: true
+      },
+      showSaveBtn: {
         type: Boolean,
         default: true
       }

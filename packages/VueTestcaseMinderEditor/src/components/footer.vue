@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="foot">
-    <el-button class="foot-button" id="save-minder" type="primary" @click="saveMinder"> 保存
+    <el-button v-if="showSaveBtn" class="foot-button" id="save-minder" type="primary" @click="saveMinder"> 保存
       <i class="el-icon-upload2 el-icon-right"></i>
     </el-button>
   </div>
@@ -8,6 +8,12 @@
 <script>
 export default {
   name: 'foot',
+  props: {
+    showSaveBtn: {
+      type: Boolean,
+      default: true
+    }
+  },
   methods: {
     saveMinder: function () {
       this.$emit('saveMinder')
@@ -19,9 +25,9 @@ export default {
 <style scoped>
 .foot {
   position: absolute;
-  left: 10px;
-  height: 35px;
-  padding: 5px 0;
+  left: 80px;
+  height: 40px;
+  padding: 10px 0;
   color: #fff;
   border-radius: 4px;
   z-index: 10;
@@ -34,7 +40,7 @@ export default {
  .foot-button {
    width: 100%;
    float: right;
-   height: 30px;
+   height: 40px;
    color: #6495ed;
    background: #fff;
    border-color: #6495ed;
