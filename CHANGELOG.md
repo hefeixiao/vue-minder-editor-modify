@@ -1,6 +1,8 @@
 ## [0.1.1](https://github.com/hefeixiao/vue-minder-editor-modify/compare/v0.3.12...v0.1.1) (2022-07-06)
-* 
 
+### Bug Fixes
+
+* 版本未打包&&修复readme ([b15ba4f](https://github.com/hefeixiao/vue-minder-editor-modify/commit/b15ba4fdadbc054d56d22b7987d4b69926ded724))
 
 # [0.1.0](https://github.com/hefeixiao/vue-minder-editor-modify/compare/v0.3.12...v0.1.0) (2022-07-06)
 
